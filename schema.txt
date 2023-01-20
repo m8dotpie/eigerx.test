@@ -1,0 +1,29 @@
+CREATE TABLE DEPARTMENT
+(
+  ID int PRIMARY KEY,
+  NAME text NOT NULL,
+  LOCATION text NOT NULL
+);
+
+CREATE TABLE EMPLOYEE
+(
+  ID int PRIMARY KEY,
+  NAME text NOT NULL,
+  SALARY int NOT NULL,
+  DEPT_ID int NOT NULL,
+  CONSTRAINT DID_FK FOREIGN KEY (DEPT_ID) REFERENCES DEPARTMENT(ID)
+);
+
+INSERT INTO DEPARTMENT VALUES 
+(1, 'Executive', 'Sydney'),
+(2, 'Production', 'Sydney'),
+(3, 'Resources', 'Cape Town'),
+(4, 'Technical', 'Texas'),
+(5, 'Management', 'Paris');
+
+INSERT INTO EMPLOYEE VALUES
+(1, 'Candice', 4685, 1),
+(2, 'Julia', 2559, 2),
+(3, 'Bob', 4405, 4),
+(4, 'Scarlet', 2350, 1),
+(5, 'Ileana', 1151, 4);
